@@ -1,0 +1,161 @@
+/* GLOBAIS =====================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: #e6e6e6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* RESET =====================*/
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 100%;
+}
+
+/* HEADER =====================*/
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 0;
+
+  padding: 15px 20px;
+}
+
+.logo {
+  letter-spacing: 4.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.logo span {
+  color: #ffcd00;
+}
+
+nav a {
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.button {
+  background: #ffcd00;
+  padding: 15px 30px;
+}
+
+/* CONTAINERS =====================*/
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.container {
+  padding: 50px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.flex {
+  display: flex;
+
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+
+  font-size: 22px;
+}
+
+.flex h2 {
+  margin-bottom: 20px;
+}
+
+.text {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.image-container img {
+  object-fit: cover;
+  max-height: 400px;
+}
+
+/* ABOUT US =====================*/
+
+.text-about {
+  text-align: right;
+}
+
+.image-about img {
+  border-left: 5px solid #696fb9;
+}
+
+/* MEMBERSHIP =====================*/
+#membership {
+  background: #fff;
+}
+
+.text-member {
+  text-align: left;
+}
+
+.grid-member {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.image-member img {
+  border-right: 5px solid #ffcd00;
+}
+
+/* FAQ =====================*/
+.text-faq {
+  text-align: right;
+}
+
+.image-faq img {
+  border-left: 5px solid #696fb9;
+}
+
+/* FOOTER =====================*/
+
+#contact-us {
+  background: #696fb9;
+  min-height: 200px;
+  color: #ffcd00;
+  font-size: 22px;
+
+  padding: 30px 10px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+#contact-us a {
+  color: #ffcd00;
+  display: block;
+}
+
+#contact-us .logo span {
+  color: black;
+}
