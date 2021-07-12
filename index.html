@@ -11,12 +11,19 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="shortcut icon"
+      href="./assets/ico_page.ico"
+      type="image/x-icon"
+    />
     <title>KYOSK</title>
   </head>
   <body>
     <header>
       <div class="logo">
-        <h2>K<span>Y</span>OSK</h2>
+        <a href="#about-us">
+          <h2>K<span>Y</span>OSK</h2>
+        </a>
       </div>
       <nav>
         <a href="#about-us">About Us</a>
@@ -104,14 +111,30 @@
 
     <footer id="contact-us">
       <div class="copyright">
-        <h2 class="logo">K<span>Y</span>OSK</h2>
+        <a href="#about-us">
+          <h2 class="logo">K<span>Y</span>OSK</h2>
+        </a>
         <p>Copyright © Ezequiel 2021</p>
       </div>
       <div class="terms">
-        <a href="#">GitHub</a>
-        <a href="#">Built by Ezequiel</a>
+        <div class="links">
+          <a href="https://github.com/MrEzequiel" target="_blank">
+            <img src="./assets/github.svg" alt="github" />
+          </a>
+          <a href="https://www.instagram.com/ezequield3v/" target="_blank">
+            <img src="./assets/instagram.svg" alt="instagram" />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCkkSvYdYZq4F4nGvd4ec-kw"
+            target="_blank"
+          >
+            <img src="./assets/youtube.svg" alt="youtube" />
+          </a>
+        </div>
+        <p>Built by Ezequiel</p>
       </div>
     </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
   </body>
 </html>

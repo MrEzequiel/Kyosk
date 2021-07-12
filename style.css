@@ -8,11 +8,18 @@
 :root {
   /* FONTES */
   font-size: 100%;
+  scroll-behavior: smooth;
+
+  /* COLORS */
+  --bg-color: #e6e6e6;
+  --second-color: #ffcd00;
+  --opposite-color: #696fb9;
+  --base-color: rgb(201, 197, 174);
 }
 
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background: #e6e6e6;
+  background: var(--bg-color);
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -40,7 +47,7 @@ img {
 
 header {
   background: #fff;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--base-color);
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.08);
 
   display: flex;
@@ -49,6 +56,7 @@ header {
 
   position: sticky;
   top: 0;
+  z-index: 99;
 
   padding: 15px 20px;
 }
@@ -59,19 +67,56 @@ header {
 }
 
 .logo span {
-  color: #ffcd00;
+  color: var(--second-color);
 }
 
 nav a {
+  text-decoration: none;
   font-size: 1.125rem;
   margin-right: 20px;
+
+  transition: color 250ms;
+  position: relative;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--opposite-color);
+}
+
+nav a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--second-color);
+
+  position: absolute;
+  left: 0;
+  bottom: -0.8rem;
+
+  transition: width 250ms;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
 }
 
 .button {
   display: block;
   margin: 0 auto;
-  background: #ffcd00;
+  background: var(--second-color);
   padding: 15px 30px;
+
+  border-radius: 0.2rem;
+
+  transition: background 400ms, color 400ms;
+}
+
+.button:hover {
+  font-weight: bold;
+  background: var(--opposite-color);
+  color: #fff;
 }
 
 /* CONTAINERS =====================*/
@@ -84,7 +129,7 @@ nav a {
 
 .container {
   padding: 50px 20px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--base-color);
 }
 
 .flex {
@@ -109,6 +154,13 @@ nav a {
 .image-container img {
   object-fit: cover;
   max-height: 400px;
+  border-radius: 0 0.4rem 0.4rem 0;
+
+  transition: transform 400ms;
+}
+
+.image-container img:hover {
+  transform: translateY(-1rem);
 }
 
 /* ABOUT US =====================*/
@@ -118,7 +170,7 @@ nav a {
 }
 
 .image-about img {
-  border-left: 5px solid #696fb9;
+  border-left: 5px solid var(--opposite-color);
 }
 
 /* MEMBERSHIP =====================*/
@@ -136,7 +188,8 @@ nav a {
 }
 
 .image-member img {
-  border-right: 5px solid #ffcd00;
+  border-right: 5px solid var(--second-color);
+  border-radius: 0.4rem 0 0 0.4rem;
 }
 
 /* FAQ =====================*/
@@ -163,7 +216,7 @@ nav a {
 }
 .acc-btn:after {
   content: '\27A4';
-  color: #fa8d0c;
+  color: var(--second-color);
   float: right;
   transition: all 0.3s linear;
 }
@@ -172,7 +225,7 @@ nav a {
 }
 .acc-btn:hover,
 .acc-btn.is-open {
-  color: #696fb9;
+  color: var(--opposite-color);
 }
 
 .acc-content {
@@ -183,36 +236,61 @@ nav a {
   padding-left: 1rem;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
-  border-bottom: 1px solid #fa8d0c;
+  border-bottom: 1px solid var(--second-color);
 }
 
 .image-faq img {
-  border-left: 5px solid #696fb9;
+  border-left: 5px solid var(--opposite-color);
 }
 
 /* FOOTER =====================*/
 
 #contact-us {
-  background: #696fb9;
+  background: var(--opposite-color);
   min-height: 200px;
-  color: #ffcd00;
+  color: var(--second-color);
   font-size: 1.375rem;
 
-  padding: 30px 10px;
+  padding: 25px 15px;
+
+  position: relative;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
 }
 
 #contact-us a {
-  color: #ffcd00;
+  color: var(--second-color);
   display: block;
+}
+
+#contact-us h2.logo {
+  margin-bottom: 1rem;
 }
 
 #contact-us .logo span {
   color: black;
+}
+
+.terms {
+  text-align: right;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1rem;
+}
+.links a img {
+  transition: filter 200ms, transform 200ms;
+}
+
+.links a img:hover {
+  filter: drop-shadow(8px 8px 10px var(--base-color));
+  transform: translateY(-0.2rem);
 }
 
 /* MEDIA QUERIES =====================*/
@@ -277,5 +355,15 @@ nav a {
     font-size: 1.1rem;
     margin: 0 2rem;
     padding-left: 0;
+  }
+  #contact-us {
+    display: block;
+    text-align: center;
+  }
+  .links {
+    margin: 1rem 0;
+  }
+  .terms p {
+    text-align: center;
   }
 }
